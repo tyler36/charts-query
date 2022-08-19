@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Document</title>
+    @vite('resources/css/app.css')
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-100">
+        <nav class="text-white bg-blue-600">
+            <div class="container mx-auto px-4 py-4 space-x-6">
+                <a href="/" class="hover:text-gray-200">Home</a>
+                <a href="/charts" class="hover:text-gray-200">Charts</a>
+            </div>
+        </nav>
+
+        <div class="container mx-auto px-4 py-4">
+            {{ $slot }}
+        </div>
+    </div>
+    
+    @stack('scripts')
+</body>
+
+</html>
