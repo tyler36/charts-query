@@ -23,6 +23,7 @@
             <div class="container px-4 py-4 mx-auto space-x-6">
                 <a href="/" class="hover:text-gray-200">Home</a>
                 <a href="/charts" class="hover:text-gray-200">Charts</a>
+                <a href="/stats" class="hover:text-gray-200">Stats</a>
             </div>
         </nav>
 
