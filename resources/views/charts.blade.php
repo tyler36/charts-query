@@ -1,5 +1,10 @@
 <x-layout>
-    <div class="bg-white rounded-md my-6 px-6 py-6">
+    <div class="px-6 py-6 my-6 bg-white rounded-md">
+        <h2 class="text-2xl font-semibold">Charts</h2>
+        <div class="my-6">
+            <div>Last year: {{ array_sum($lastYearOrders) }}</div>
+            <div>This year: {{ array_sum($thisYearOrders) }}</div>
+        </div>
         <canvas id="myChart"></canvas>
     </div>
 
@@ -27,20 +32,19 @@
                 datasets: [{
                         label: 'Last year orders',
                         backgroundColor: 'lightgray',
-                        data: [4, 10, 5, 2, 20, 30, 23, 45, 12, 4, 5, 6],
+                        data: {{ Js::from($lastYearOrders) }},
                     },
                     {
                         label: 'This year orders',
                         backgroundColor: 'lightgreen',
-                        data: [10, 20, 15, 5, 10, 20, 45, 23, 43, 5, 32, 8],
+                        data: {{ Js::from($thisYearOrders) }},
                     }
                 ]
             };
 
             const config = {
                 type: 'bar',
-                data: data,
-                options: {}
+                data: data
             };
 
             const myChart = new Chart(
