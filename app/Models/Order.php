@@ -11,6 +11,18 @@ class Order extends Model
     use HasFactory;
 
     /**
+     * Summary of scopeGetYearOrders
+     * @param Builder $query
+     * @param mixed $year
+     * @return Builder
+     */
+    public function scopeGetYearOrders(Builder $query, $year)
+    {
+        return $query->whereYear('created_at', $year);
+    }
+
+
+    /**
      * Summary of scopeGroupByMonth
      * @param Builder $query
      * @return \Illuminate\Support\Collection

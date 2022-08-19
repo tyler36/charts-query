@@ -19,15 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/charts', function () {
-    $thisYearOrders = Order::query()
-        ->whereYear('created_at', date('Y'))
-        ->groupByMonth();
-
-    $lastYearOrders = Order::query()
-        ->whereYear('created_at', (date('Y') -1) )
-        ->groupByMonth();
-
-    return view('charts')
-        ->with('thisYearOrders', $thisYearOrders)
-        ->with('lastYearOrders', $lastYearOrders);
+    return view('charts');
 });
