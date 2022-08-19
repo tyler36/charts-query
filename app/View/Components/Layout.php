@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class stat-layout extends Component
+class Layout extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class stat-layout extends Component
      */
     public function render()
     {
-        return view('components.stat-layout');
+        return view('components.layout');
     }
 }
